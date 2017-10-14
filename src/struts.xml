@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd"> 
+<struts>
+<include file="struts-default.xml"></include>  
+<!--     指定默认编码集   -->
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>  
+<!--     指定需要Struts2处理的请求后缀   -->
+<!--     <constant name="struts.action.extension" value="do,action"></constant>   -->
+<!--     设置浏览器是否缓存静态内容，开发阶段应关闭，生产阶段打开，默认为打开   -->
+    <constant name="struts.serve.static.browserCache" value="false"></constant>  
+<!--     当struts的配置文件修改后，系统是否自动重新加载该文件，默认为false，开发阶段应打开   -->
+    <constant name="struts.configuration.xml.reload" value="true"></constant>  
+<!--     开发模式下使用，可以打印出更详细的错误信息   -->
+    <constant name="struts.devMode" value="true"></constant>  
+    <!-- action全部用注解进行配置 -->  
+  
+    <!-- 是否开启动态方法调用 -->  
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" /> 
+    <!--pageckage:用于管理action的    
+        name:是包的名字，随便命名，用于被继承的    
+        namespace:工作空间是路径的一部分http://localhost:8080/struts2/test/helloworld.action    
+        extends:继承于谁    
+        extends="struts-default"：在struts2的核心jar文件下有一个struts-default.xml文件  文件下有个package叫做struts-default，里面定义许多方法--> 
+     <package name ="a" namespace="/" extends="struts-default">
+      <!-- name:请求的地址，用于匹配浏览器中路径中工作空间后的那一部分也就是上面路径中的helloworld.action，其中在浏览器中输入的时候.action可写可不写    
+        class:类名，这个action所在的位置    
+        method:处理的方法，helloworld.java中的方法名 -->    
+           <action name="inquery" class="a.Book">
+    <result name="success">success.jsp</result>
+    <result name="error">error.jsp</result>
+     </action>
+    </package >
+</struts>
