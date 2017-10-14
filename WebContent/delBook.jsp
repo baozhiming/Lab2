@@ -10,7 +10,7 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-
+<!-- 同样的连接云数据库驱动，数据库 -->
         <%
 		try{
            Class.forName("com.mysql.jdbc.Driver");

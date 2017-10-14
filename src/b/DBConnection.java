@@ -27,7 +27,7 @@ public class DBConnection{
             System.out.println("找不到MySQL驱动!");
             e1.printStackTrace();
         }
-        
+        //使用新浪云控制台启动云数据库，使用特定的格式连接数据库驱动，连接数据库
         String url=String.format("jdbc:mysql://%s:%s/%s", System.getenv("MYSQL_HOST"), System.getenv("MYSQL_PORT"), System.getenv("MYSQL_DB"));    //JDBC的URL    
         //调用DriverManager对象的getConnection()方法，获得一个Connection对象
    

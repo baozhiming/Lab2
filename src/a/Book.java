@@ -31,7 +31,7 @@ public class Book extends ActionSupport {
     {
     	this.authorID=authorID;
     }
-
+    //自动调用
     public String execute(){
     	
     	DBConnection db = new DBConnection();
